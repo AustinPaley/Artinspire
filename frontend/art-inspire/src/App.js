@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import IdeaGenerator from './Ideagenerator.js'
 
@@ -8,12 +7,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <img src={"https://img00.deviantart.net/a7a8/i/2009/356/5/9/art__i_feel_inspired_by_shadowtuga.jpg"} className="Banner-image" alt="logo" />
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>Welcome to Artinspire!</h1>
         <IdeaGenerator />
       </div>
     );

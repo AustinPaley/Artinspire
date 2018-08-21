@@ -1,10 +1,9 @@
-.App {
-  text-align: center;
+*{
+  font-size: 16px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.App {
+  text-align: center;
 }
 
 .App-header {
@@ -22,11 +21,33 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.subtitles{
+  font-weight: bold;
+}
+
+.Banner-image{
+  height: 100%
+}
+
+h1{
+  font-size: 2rem;
+}
+
+h2{
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+#ideaGenerate{
+  border-radius: .5rem
 }
 
 .subtitles{
-  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+.mediumType{
+  font-size: 1rem;
+  margin-bottom: .5rem;
 }

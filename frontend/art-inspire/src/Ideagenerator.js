@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 const ARTTYPES = "http://localhost:4000/api/v1/arttypes"
-const ARTADJECTIVES = "https://od-api.oxforddictionaries.com/api/v1/wordlist/en/lexicalCategory%3Dadjective%3Bdomains%3DArt?limit=5000"
+const ARTADJECTIVES = "http://localhost:4000/api/v1/words"
 
 
 class IdeaGenerator extends Component {
@@ -11,7 +11,9 @@ class IdeaGenerator extends Component {
     this.state= {
       words: [],
       chosenWord: "",
-      artAdjectives: []
+      artAdjectives: [],
+      chosenAdjectives: [],
+      clicked: "Generate Idea!",
     }
   }
 
@@ -22,27 +24,35 @@ class IdeaGenerator extends Component {
       words: res.map(obj => obj.name)
     }))
 
-    fetch(ARTADJECTIVES, {
-      headers:{
-        'Content-Type': 'text/html',
-        "app_key" : "ffee9dee04174ca8122cbcff8cbe5cfd",
-        "app_id" : "8ac98e63",
-      }
-    })
+    fetch(ARTADJECTIVES)
     .then(res => res.json())
-    .then(res => {debugger})
+    .then(res => {
+      this.setState({
+      artAdjectives: res.map(obj => obj.name)
+    })})
 
   }
 
   handleClick = (event) => {
+    let newArray = []
+    let filteredNumbers = []
+    for (let i=0; i<5; i++){
+      let newNumber = Math.floor(Math.random() * this.state.words.length)
+      debugger
+      filteredNumbers.push(newNumber)
+      newArray.push(this.state.artAdjectives[newNumber])
+    }
     this.setState({
-      chosenWord: this.state.words[Math.floor(Math.random() * this.state.words.length)]})
+      chosenWord: this.state.words[Math.floor(Math.random() * this.state.words.length)],
+      chosenAdjectives: newArray,
+      clicked: "Generate a New Idea!"
+    })
   }
 
   render() {
     return (
       <div className="Ideas">
-      <button onClick={this.handleClick}>Generate Idea!</button>
+      <button className="button" id="ideaGenerate" onClick={this.handleClick}>{this.state.clicked}</button>
       <br/><br/>
       {this.state.chosenWord === ""
       ?
@@ -50,8 +60,12 @@ class IdeaGenerator extends Component {
       :
         <div>
         <h2>Your Project Should Have: </h2>
-        <br/><br/>
-        <div><span className="subtitles">Medium:</span> {this.state.chosenWord}</div>
+        <div className="mediumType"><span className="subtitles">Medium:</span> {this.state.chosenWord}</div>
+        <div className="wordDescriptor"><span className="subtitles">Adjective 1:</span> {this.state.chosenAdjectives[0]}</div>
+        <div className="wordDescriptor"><span className="subtitles">Adjective 2:</span> {this.state.chosenAdjectives[1]}</div>
+        <div className="wordDescriptor"><span className="subtitles">Adjective 3:</span> {this.state.chosenAdjectives[2]}</div>
+        <div className="wordDescriptor"><span className="subtitles">Adjective 4:</span> {this.state.chosenAdjectives[3]}</div>
+        <div className="wordDescriptor"><span className="subtitles">Adjective 5:</span> {this.state.chosenAdjectives[4]}</div>
         </div>
       }
       </div>
