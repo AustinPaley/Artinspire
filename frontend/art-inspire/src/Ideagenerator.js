@@ -38,9 +38,14 @@ class IdeaGenerator extends Component {
     let filteredNumbers = []
     for (let i=0; i<5; i++){
       let newNumber = Math.floor(Math.random() * this.state.words.length)
-      debugger
-      filteredNumbers.push(newNumber)
-      newArray.push(this.state.artAdjectives[newNumber])
+      if (filteredNumbers.find(number => number === newNumber) === undefined){
+        filteredNumbers.push(newNumber)
+        newArray.push(this.state.artAdjectives[newNumber])
+      }
+      else {
+        i--
+      }
+      console.log(filteredNumbers)
     }
     this.setState({
       chosenWord: this.state.words[Math.floor(Math.random() * this.state.words.length)],
