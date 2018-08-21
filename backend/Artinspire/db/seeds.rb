@@ -1,3 +1,10 @@
+require 'json'
+textfile = File.open("././dictionary.json").read
+data = JSON.parse(textfile)
+
+data["dictionary"].each do |item|
+  Word.create(name: item["word"])
+end
 # https://developer.oxforddictionaries.com/documentation#!/Utility/get_domains_source_language
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
