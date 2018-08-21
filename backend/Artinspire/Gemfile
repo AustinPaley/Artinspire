@@ -49,3 +49,5 @@ gem "httparty", "~> 0.16.2"
 
 # Added at 2018-08-21 14:23:53 -0400 by Austinwork:
 gem "figaro", "~> 1.1"
+
+gem "rest-client"
