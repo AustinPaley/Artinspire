@@ -6238,6 +6238,111 @@
         {
             "word": "voguish",
             "id": "voguish"
+        },
+        {
+            "word": "attic",
+            "id": "attic"
+        },
+        {
+            "word": "basement",
+            "id": "basement"
+        },
+        {
+            "word": "bathroom",
+            "id": "bathroom"
+        },
+        {
+            "word": "bedroom",
+            "id": "bedroom"
+        },
+        {
+            "word": "cellar",
+            "id": "cellar"
+        },
+        {
+            "word": "closet",
+            "id": "closet"
+        },
+        {
+            "word": "den",
+            "id": "den"
+        },
+        {
+            "word": "dining room",
+            "id": "dining room"
+        },
+        {
+            "word": "front yard",
+            "id": "front yard"
+        },
+        {
+            "word": "garage",
+            "id": "garage"
+        },
+        {
+            "word": "hall",
+            "id": "hall"
+        },
+        {
+            "word": "hallway",
+            "id": "hallway"
+        },
+        {
+            "word": "kitchen",
+            "id": "kitchen"
+        },
+        {
+            "word": "laundry",
+            "id": "laundry"
+        },
+        {
+            "word": "living room",
+            "id": "living room"
+        },
+        {
+            "word": "master bedroom",
+            "id": "master bedroom"
+        },
+        {
+            "word": "office",
+            "id": "office"
+        },
+        {
+            "word": "pantry",
+            "id": "pantry"
+        },
+        {
+            "word": "patio",
+            "id": "patio"
+        },
+        {
+            "word": "playroom",
+            "id": "playroom"
+        },
+        {
+            "word": "porch",
+            "id": "porch"
+        },
+        {
+            "word": "staircase",
+            "id":"staircase"
+        },
+        {
+            "word": "study",
+            "id": "study"
+        },
+        {
+            "word": "sun room",
+            "id":"sun room"
+        },
+        {
+            "word": "TV room",
+            "id": "TV room"
+        },
+        {
+            "word": "workshop",
+            "id": "workshop"
         }
+
       ]
     }
