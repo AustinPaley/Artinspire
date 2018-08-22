@@ -9,8 +9,8 @@ class IdeaGenerator extends Component {
   constructor(props){
     super(props)
     this.state= {
-      words: [],
-      chosenWord: "",
+      mediums: [],
+      chosenMedium: "",
       artAdjectives: [],
       chosenAdjectives: [],
       clicked: "Generate Idea!",
@@ -21,7 +21,7 @@ class IdeaGenerator extends Component {
     fetch(ARTTYPES)
     .then(res => res.json())
     .then(res => this.setState({
-      words: res.map(obj => obj.name)
+      mediums: res.map(obj => obj.name)
     }))
 
     fetch(ARTADJECTIVES)
@@ -37,7 +37,7 @@ class IdeaGenerator extends Component {
     let newArray = []
     let filteredNumbers = []
     for (let i=0; i<5; i++){
-      let newNumber = Math.floor(Math.random() * this.state.words.length)
+      let newNumber = Math.floor(Math.random() * this.state.artAdjectives.length)
       if (filteredNumbers.find(number => number === newNumber) === undefined){
         filteredNumbers.push(newNumber)
         newArray.push(this.state.artAdjectives[newNumber])
@@ -45,10 +45,9 @@ class IdeaGenerator extends Component {
       else {
         i--
       }
-      console.log(filteredNumbers)
     }
     this.setState({
-      chosenWord: this.state.words[Math.floor(Math.random() * this.state.words.length)],
+      chosenMedium: this.state.mediums[Math.floor(Math.random() * this.state.mediums.length)],
       chosenAdjectives: newArray,
       clicked: "Generate a New Idea!"
     })
@@ -59,13 +58,13 @@ class IdeaGenerator extends Component {
       <div className="Ideas">
       <button className="button" id="ideaGenerate" onClick={this.handleClick}>{this.state.clicked}</button>
       <br/><br/>
-      {this.state.chosenWord === ""
+      {this.state.chosenMedium === ""
       ?
       null
       :
         <div>
         <h2>Your Project Should Have: </h2>
-        <div className="mediumType"><span className="subtitles">Medium:</span> {this.state.chosenWord}</div>
+        <div className="mediumType"><span className="subtitles">Medium:</span> {this.state.chosenMedium}</div>
         <div className="wordDescriptor"><span className="subtitles">Adjective 1:</span> {this.state.chosenAdjectives[0]}</div>
         <div className="wordDescriptor"><span className="subtitles">Adjective 2:</span> {this.state.chosenAdjectives[1]}</div>
         <div className="wordDescriptor"><span className="subtitles">Adjective 3:</span> {this.state.chosenAdjectives[2]}</div>
